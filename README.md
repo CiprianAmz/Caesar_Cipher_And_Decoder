@@ -17,7 +17,7 @@ Options:
 
 5 - Decrypt the file encrypted file using an input key
 
-6 - Decrypt the file due to the most letter apparition (read more about this in ReadMe file)*
+6 - Decrypt the file based on the letter with the most apparitions (read more about this in ReadMe file)*
 
 * --> In English, the letter E it the most used letter. The point 6 is available only for english sentences inputs, with a considerable length, 
 where is the sentences is decrypted correlating the letter with the most apparitions with the letter E. It is not 100% accurate, 
