@@ -13,19 +13,27 @@ Enter your option: ")
     # Read the imput option and base on that check the number of apparitions
     if int(input()) == 1:
         data = pd.DataFrame(analyse_text_by_symbols(read_data("input_data/input.txt")).items())
-        data = data.rename(columns={0: 'Symbol', 1 : 'Apparitions'})
-        app_pivot = data.pivot_table(index = 'Symbol', values = 'Apparitions')
+        target = "Symbol"
     else:
         data = pd.DataFrame(analyse_text_by_letters(read_data("input_data/input.txt")).items())
-        data = data.rename(columns={0: 'Letter', 1 : 'Apparitions'})
-        app_pivot = data.pivot_table(index = 'Letter', values = 'Apparitions')
+        target = "Letter"
 
-    # Plot the computed data and show it
+    # Add the percentage column
+    data = data.rename(columns={0: target, 1 : 'Apparitions'})
+    percentage = data['Apparitions'] / sum(i for i in data['Apparitions']) * 100
+    data['Percentage'] = percentage
+
+    # Plot the computed data, show it and save it
+    app_pivot = data.pivot_table(index = target, values = 'Apparitions')
     app_pivot.plot(kind = 'bar', color = 'blue')
-    plt.savefig("output_data/graph.png")
-
-    # Save the results
+    plt.savefig("output_data/graphByAparitions.png")
     plt.show()
+
+    app_pivot = data.pivot_table(index = target, values = 'Percentage')
+    app_pivot.plot(kind = 'bar', color = 'blue')
+    plt.savefig("output_data/graphByPercentage.png")
+    plt.show()
+    
     data.to_csv("output_data/output.csv")
 
     print("The results were saved in output_data folder.")
