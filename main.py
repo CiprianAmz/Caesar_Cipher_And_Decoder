@@ -26,7 +26,7 @@ Enter your option: ")
     # Plot the computed data, show it and save it
     app_pivot = data.pivot_table(index = target, values = 'Apparitions')
     app_pivot.plot(kind = 'bar', color = 'blue')
-    plt.savefig("output_data/graphByAparitions.png")
+    plt.savefig("output_data/graphByPercentage.png")
     plt.show()
 
     app_pivot = data.pivot_table(index = target, values = 'Percentage')
