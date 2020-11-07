@@ -43,7 +43,7 @@ def main():
 3 - Encrypt the input file\n\
 4 - Decrypt the file encrypted file using brute force\n\
 5 - Decrypt the file encrypted file using an input key\n\
-6 - Decrypt the file due to the most letter apparition (read more about this in ReadMe file)\n\
+6 - Decrypt the file based on the letter with the most apparitions (read more about this in ReadMe file)*\n\
 Other - Exit\n\
 Enter your option: ")
     
