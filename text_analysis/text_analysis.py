@@ -22,7 +22,7 @@ def analyse_text_by_symbols(text_input):
 
     for i in text_input:
         if data.get(i, -1) == -1:
-            data.update({i: 0})
+            data.update({i: 1})
         else:
             data[i] += 1
 
